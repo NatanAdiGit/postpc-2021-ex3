@@ -8,7 +8,7 @@ public class SimpleCalculatorImpl implements SimpleCalculator {
 
   // todo: add fields as needed
   // the current output of the calculator.
-  private String curInput;
+  private String curInput = "";
 
   @Override
   public String output() {
@@ -103,7 +103,7 @@ public class SimpleCalculatorImpl implements SimpleCalculator {
     //  if input was "12+" and called `deleteLast()`, then delete the "+"
     //  if no input was given, then there is nothing to do here
     if (curInput.length() > 0)
-         curInput = curInput.substring(curInput.length() - 1);
+         curInput = curInput.substring(0, curInput.length() - 1);
   }
 
   @Override

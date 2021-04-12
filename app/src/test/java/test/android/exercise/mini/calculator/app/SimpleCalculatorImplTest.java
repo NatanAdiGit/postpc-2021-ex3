@@ -92,6 +92,22 @@ public class SimpleCalculatorImplTest {
     SimpleCalculatorImpl secondCalculator = new SimpleCalculatorImpl();
     // TODO: implement the test based on this method's name.
     //  you can get inspiration from the test method `when_savingState_should_loadThatStateCorrectly()`
+    // add 0+2+4+6+8+ to the first calculator output.
+    for (int i = 0; i < 10; i++)
+      if (i % 2 == 0)
+      firstCalculator.insertDigit(i);
+      else
+        firstCalculator.insertPlus();
+
+    // save current state
+    Serializable savedFirstState = firstCalculator.saveState();
+    assertNotNull(savedFirstState);
+
+    // load the input of the first calculator to the second one.
+    secondCalculator.loadState(savedFirstState);
+
+    // check the two outputs are the same.
+    assertEquals(firstCalculator.output(), secondCalculator.output());
   }
 
   // TODO:
