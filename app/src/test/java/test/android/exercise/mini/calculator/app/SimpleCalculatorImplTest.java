@@ -29,7 +29,7 @@ public class SimpleCalculatorImplTest {
   public void when_inputIsMinus_then_outputShouldBeCorrect(){
     SimpleCalculatorImpl calculatorUnderTest = new SimpleCalculatorImpl();
     calculatorUnderTest.insertMinus();
-    String expected = "???"; // TODO: decide the expected output when having a single minus
+    String expected = "0-"; // TODO: decide the expected output when having a single minus
     assertEquals(expected, calculatorUnderTest.output());
   }
 
@@ -40,7 +40,7 @@ public class SimpleCalculatorImplTest {
       calculatorUnderTest.insertDigit(357);
       fail("should throw an exception and not reach this line");
     } catch (RuntimeException e) {
-      // good :)
+      System.out.println(e.getMessage());
     }
   }
 
@@ -48,11 +48,21 @@ public class SimpleCalculatorImplTest {
   @Test
   public void when_callingDeleteLast_then_lastOutputShouldBeDeleted(){
     // todo: implement test
+    SimpleCalculatorImpl calculatorUnderTest = new SimpleCalculatorImpl();
+    calculatorUnderTest.insertDigit(1);
+    calculatorUnderTest.insertDigit(7);
+    calculatorUnderTest.deleteLast();
+    assertEquals("1", calculatorUnderTest.output());
   }
 
   @Test
   public void when_callingClear_then_outputShouldBeCleared(){
     // todo: implement test
+    SimpleCalculatorImpl calculatorUnderTest = new SimpleCalculatorImpl();
+    for (int i = 0; i < 10; i++)
+      calculatorUnderTest.insertDigit(i);
+    calculatorUnderTest.clear();
+    assertEquals("0", calculatorUnderTest.output());
   }
 
   @Test
