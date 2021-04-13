@@ -188,32 +188,18 @@ public class MainActivity extends AppCompatActivity {
     });
   }
 
+
   @Override
   protected void onSaveInstanceState(@NonNull Bundle outState) {
     super.onSaveInstanceState(outState);
     // todo: save calculator state into the bundle
+    outState.putSerializable("last calculator output", calculator.saveState());
   }
 
   @Override
   protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
     super.onRestoreInstanceState(savedInstanceState);
     // todo: restore calculator state from the bundle, refresh main text-view from calculator's output
-  }
-}
-
-
-
-  }
-
-  @Override
-  protected void onSaveInstanceState(@NonNull Bundle outState) {
-    super.onSaveInstanceState(outState);
-    // todo: save calculator state into the bundle
-  }
-
-  @Override
-  protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-    super.onRestoreInstanceState(savedInstanceState);
-    // todo: restore calculator state from the bundle, refresh main text-view from calculator's output
+    calculator.loadState(savedInstanceState.getSerializable("last calculator output"));
   }
 }
