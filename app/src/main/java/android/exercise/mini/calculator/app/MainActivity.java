@@ -55,6 +55,153 @@ public class MainActivity extends AppCompatActivity {
     View deleteButton = findViewById(R.id.buttonBackSpace);
     TextView clearButton = findViewById(R.id.buttonClear);
 
+    //initial update main text-view based on calculator's output
+
+    calOutput.setText(calculator.output());
+
+    //set click listeners on all buttons to operate on the calculator and refresh main text-view
+    /* ---------  numbers buttons --------- */
+
+    button0.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        calculator.insertDigit(0);
+        calOutput.setText(calculator.output());
+      }
+    });
+
+    button1.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        calculator.insertDigit(1);
+        calOutput.setText(calculator.output());
+      }
+    });
+
+    button2.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        calculator.insertDigit(2);
+        calOutput.setText(calculator.output());
+      }
+    });
+    button3.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        calculator.insertDigit(3);
+        calOutput.setText(calculator.output());
+      }
+    });
+
+    button4.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        calculator.insertDigit(4);
+        calOutput.setText(calculator.output());
+      }
+    });
+
+    button5.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        calculator.insertDigit(5);
+        calOutput.setText(calculator.output());
+      }
+    });
+
+    button6.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        calculator.insertDigit(6);
+        calOutput.setText(calculator.output());
+      }
+    });
+
+    button7.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        calculator.insertDigit(7);
+        calOutput.setText(calculator.output());
+      }
+    });
+
+    button8.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        calculator.insertDigit(8);
+        calOutput.setText(calculator.output());
+      }
+    });
+
+    button9.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        calculator.insertDigit(9);
+        calOutput.setText(calculator.output());
+      }
+    });
+
+    /* ---------  numbers buttons --------- */
+
+    /* ---------  operators buttons --------- */
+
+    plusButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        calculator.insertPlus();
+        calOutput.setText(calculator.output());
+      }
+    });
+
+    minusButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        calculator.insertMinus();
+        calOutput.setText(calculator.output());
+      }
+    });
+
+    equalButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        calculator.insertEquals();
+        calOutput.setText(calculator.output());
+      }
+    });
+
+    /* ---------  operators buttons --------- */
+
+    deleteButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        calculator.deleteLast();
+        calOutput.setText(calculator.output());
+      }
+    });
+
+    clearButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        calculator.clear();
+        calOutput.setText(calculator.output());
+      }
+    });
+  }
+
+  @Override
+  protected void onSaveInstanceState(@NonNull Bundle outState) {
+    super.onSaveInstanceState(outState);
+    // todo: save calculator state into the bundle
+  }
+
+  @Override
+  protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+    super.onRestoreInstanceState(savedInstanceState);
+    // todo: restore calculator state from the bundle, refresh main text-view from calculator's output
+  }
+}
+
+
 
   }
 
