@@ -54,8 +54,16 @@ public class SimpleCalculatorImpl implements SimpleCalculator {
   public void insertEquals() {
     // todo: calculate the equation. after calling `insertEquals()`, the output should be the result
     //  e.g. given input "14+3", calling `insertEquals()`, and calling `output()`, output should be "17"
-    curInput = Long.toString(calculateCurInput());
+    long result = calculateCurInput();
+    // if result is 0 then the output should be empty
+    if (result == 0)
+      curInput = "";
+    else
+      curInput = Long.toString(calculateCurInput());
+
   }
+
+
 
   /**
    * Calculate the input.
