@@ -25,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
 
     /*
     TODO:
-    - find all views
-    - initial update main text-view based on calculator's output
-    - set click listeners on all buttons to operate on the calculator and refresh main text-view
+    - find all views.
+    - initial update main text-view based on calculator's output.
+    - set click listeners on all buttons to operate on the calculator and refresh main text-view.
      */
 
-    // finding all views
+    // finding all views.
     // the main text view.
     TextView calOutput = findViewById(R.id.textViewCalculatorOutput);
 
